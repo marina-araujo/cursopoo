@@ -1,13 +1,13 @@
 package cursoemvideo.cursopoo.aula02;
 
 public class Caneta {
-    String modelo;
-    String cor;
-    float ponta;
-    int carga;
-    boolean tampada;
+    public String modelo;
+    public String cor;
+    private float ponta;
+    protected int carga;
+    private boolean tampada;
 
-    void status(){
+    public void status(){
         System.out.println("Modelo da caneta: " + this.modelo);
         System.out.println("Cor: " + this.cor);
         System.out.println("Está tampada? " + this.tampada);
@@ -15,7 +15,7 @@ public class Caneta {
         System.out.println("Carga: " + this.carga);
     }
 
-    void rabiscar(){
+    public void rabiscar(){
         if (this.tampada == true){
             System.out.println("ERRO! Estou tampada e não posso rabiscar.");
         } else {
@@ -23,13 +23,14 @@ public class Caneta {
         }
     }
 
-    void tampar(){
+    public void tampar(){
         this.tampada = true;
         System.out.println("Caneta foi tampada");
     }
 
-    void destampar(){
+    public void destampar(){
         this.tampada = false;
         System.out.println("Caneta foi destampada");
     }
+
 }
