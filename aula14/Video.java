@@ -8,7 +8,6 @@ public class Video implements AcoesVideo {
     private boolean reproduzindo;
 
     
-
     public Video(String titulo) {
         this.titulo = titulo;
         this.avaliacao = 1;
@@ -30,14 +29,16 @@ public class Video implements AcoesVideo {
     }
 
     public void setAvaliacao(int avaliacao) {
-        this.avaliacao = avaliacao;
+        int nova;
+        nova = (int) ((this.avaliacao + avaliacao) / this.views);
+        this.avaliacao = nova;
     }
 
-    public float getViews() {
+    public int getViews() {
         return views;
     }
 
-    public void setViews(float views) {
+    public void setViews(int views) {
         this.views = views;
     }
 
@@ -61,13 +62,11 @@ public class Video implements AcoesVideo {
 
     @Override
     public void like() {
-        // TODO Auto-generated method stub
         this.curtidas++;
     }
 
     @Override
     public void pause() {
-        // TODO Auto-generated method stub
         this.reproduzindo = false;
     }
 
